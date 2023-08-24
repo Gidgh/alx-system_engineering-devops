@@ -9,8 +9,8 @@ def number_of_subscribers(subreddit):
     # Construct the URL to query the subreddit's information
     url = f'https://www.reddit.com/r/{subreddit}/about.json'
 
-    # Send a GET request to the Reddit API
-    response = requests.get(url, headers=headers)
+    # Send a GET request to the Reddit API with allow_redirects set to False
+    response = requests.get(url, headers=headers, allow_redirects=False)
 
     # Check if the request was successful
     if response.status_code == 200:
